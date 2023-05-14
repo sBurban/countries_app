@@ -1,6 +1,9 @@
 
 // import fetchCountries from "../utils/ServiceCountries";
 import useCountries from "../hooks/useCountries";
+import Header from "./Header";
+import Searchbar from "./Searchbar";
+import Cardlist from "./Cardlist/Cardlist";
 
 //Lista de requerimientos:
 //1 header
@@ -14,19 +17,23 @@ import useCountries from "../hooks/useCountries";
 
 const Home = () => {
     const {countries, error} = useCountries();
-
-    if(error){
-        return <div>{error}</div>;
-    }
-
+    // if(error){
+    //     return <div>{error}</div>;
+    // }
 
     return <>
-        {!countries?.length && <div>Loading...</div>}
+        <Header />
+        <Searchbar />
+        <Cardlist data={countries} error={error} />
+        {/* {!countries?.length && <div>Loading...</div>}
         {countries?.length > 0 &&
+            <Cardlist data={countries} error={error} />
+        } */}
+        {/* {countries?.length > 0 &&
             <div>
                 {countries.map((r,i) => <p key={i}>{r.name}</p>)}
             </div>
-        }
+        } */}
     </>;
 };
 

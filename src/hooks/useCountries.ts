@@ -4,14 +4,23 @@ import axios from "axios";
 // const DATABASE = 'https://restcountries.eu/rest/v2/all';
 const ENDPOINT = 'https://restcountries.com/v2/all';
 
+type Language = {
+    name: string
+}
+
+type Currency = {
+    code: string
+}
+
 export type Country = {
     name: string,
     capital: string,
-    languages: {
-        name: string
-    },
+    languages: Language[],
     population: number,
-    currency: string
+    currencies: Currency[],
+    flags: {
+        svg: string
+    }
 }
 
 const useCountries = () => {
