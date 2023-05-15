@@ -1,12 +1,15 @@
 import { Country } from "../../hooks/useCountries";
 import Card from "./Card";
+import './Cardlist.modules.css';
 
-interface CardlistProps {
-    data:Country[],
-    error: null|string
-}
+import { CountriesResponse } from "../../common/Types";
 
-const Cardlist = ({data, error}:CardlistProps) => {
+// interface CardlistProps {
+//     data:Country[],
+//     error: null|string
+// }
+
+const Cardlist = ({data, error}:CountriesResponse) => {
 
     if(error){
         return <div>{error}</div>;

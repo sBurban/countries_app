@@ -1,5 +1,7 @@
 import { Country } from "../../hooks/useCountries";
 
+import './Card.modules.css';
+
 interface CardProps{
     info: Country,
 }
@@ -12,10 +14,10 @@ const Card = ({info}:CardProps) => {
     return (
         <div className="card">
             <div className="card__flag">
-                <img src={info.flags.svg} />
+                <img src={info.flags.svg} alt={info.name}/>
             </div>
+            <p className="card__title">{info.name.toUpperCase()}</p>
             <div className="card__body">
-                <p className="card__title">{info.name}</p>
                 <p><span className="card__info">Capital:</span>{info.capital}</p>
                 <p><span className="card__info">Languages:</span>{languages}</p>
                 <p><span className="card__info">Population:</span>{info.population}</p>
