@@ -1,40 +1,61 @@
+.cardlist_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem 0 3rem;
+    padding: 1rem;
+    background: #f0f0f0;
+}
+
 .card{
+    min-width: 25rem;
     max-width: 25rem;
-    max-height: 25rem;
     text-align: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0.5rem;
     padding: 2rem;
+    font-size: 1.6rem;
+    background: #fff;
+    border-radius: 0.2rem;
 }
+.card:hover{
+    box-shadow: 0 0.1rem 1rem #cfc9c7;
+    -webkit-transition: all .2s ease-in;
+    transform: scale(1.015);
+}
+
 .card__flag{
     display: block;
     height: 12rem;
     width: 20rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
 
 }
 .card__flag img{
     width: 75%;
     height: 75%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 0.3rem;
-    box-shadow: 0 0 0 1px red;
+    box-shadow: 0 0 0.6rem 0.2rem #f1e1e1;
 }
 .card__title{
     color: orange;
-    font-size: 1.4rem;
-    padding: 0;
-    margin: 0;
+
 }
 .card__body{
     box-sizing: border-box;
     text-align: left;
-    font-size: 1.2rem;
 }
 .card__body p{
     padding: 0;
     margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 0.2rem;
+    color: #747474;
+    text-align: left;
+    letter-spacing: .05rem;
 }
 .card__info{
     /* color: black; */

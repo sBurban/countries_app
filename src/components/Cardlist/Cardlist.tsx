@@ -1,6 +1,6 @@
-import { Country } from "../../hooks/useCountries";
+// import { Country } from "../../hooks/useCountries";
 import Card from "./Card";
-import './Cardlist.modules.css';
+import './Card.modules.css';
 
 import { CountriesResponse } from "../../common/Types";
 

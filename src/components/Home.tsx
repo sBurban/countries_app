@@ -5,6 +5,7 @@ import Header from "./Header";
 import Searchbar from "./Searchbar";
 import Cardlist from "./Cardlist/Cardlist";
 import GraphWrapper from "./Graph/GraphWrapper";
+import Footer from "./Footer";
 
 //Lista de requerimientos:
 //1 header
@@ -25,8 +26,9 @@ const Home = () => {
     return <>
         <Header />
         <Searchbar />
-        {/* <Cardlist data={countries} error={error} /> */}
+        <Cardlist data={countries} error={error} />
         <GraphWrapper data={countries} error={error} />
+        <Footer />
         {/* {!countries?.length && <div>Loading...</div>}
         {countries?.length > 0 &&
             <Cardlist data={countries} error={error} />

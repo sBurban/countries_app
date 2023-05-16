@@ -1,4 +1,4 @@
-import { Country } from "../../hooks/useCountries"
+// import { Country } from "../../hooks/useCountries"
 import { useState } from "react"
 import Graph from './Graph';
 import { CountriesResponse } from "../../common/Types";

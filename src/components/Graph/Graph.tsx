@@ -1,5 +1,5 @@
 // import { CountriesResponse } from "../../common/Types";
-import { Country, Language } from "../../hooks/useCountries";
+import { Country } from "../../hooks/useCountries";
 import './Graph.modules.css'
 
 interface GraphProps {

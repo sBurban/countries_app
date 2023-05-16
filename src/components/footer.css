@@ -1,0 +1,35 @@
+.footer{
+    margin: 0.2rem;
+    padding: 2rem;
+    background-color: #f0f0f0;
+
+}
+.footer__wrapper{
+    padding-bottom: 3rem;
+}
+.footer__wrapper p{
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0;
+}
+.footer__wrapper small{
+    font-size: 1.2rem;
+}
+.footer__wrapper .copyright {
+    /* box-shadow: 0 0 0.2rem 0.2rem purple; */
+    box-shadow: 0 0 0.6rem 0.2rem #f1e1e1;
+}
+
+
+.credits{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 0.6rem 0.2rem rgb(212, 166, 212);
+}
+.credits span{
+    color: orange;
+}
+
+.arrow{
+
+}
