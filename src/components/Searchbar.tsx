@@ -5,7 +5,7 @@ const Searchbar = () => {
             //<FontAwesomeIcon icon="fas fa-chart-bar" />
     return (
         <div className="searchbar_container">
-            <input type="text" id="searchbar" />
+            <input type="text" id="searchbar" placeholder="Search countries by name, city and languages" />
             <div>
                 <a href="#stat_section" >
                     <img src={chartBar} className="iconbar" alt="Go to Stat section" />
