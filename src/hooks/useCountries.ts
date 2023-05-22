@@ -3,6 +3,7 @@ import axios from "axios";
 
 // const DATABASE = 'https://restcountries.eu/rest/v2/all';
 const ENDPOINT = 'https://restcountries.com/v2/all';
+import { countriesData } from '../data/countries.js'; //Data when site or internet down
 
 type Language = {
     name: string
@@ -29,9 +30,14 @@ const useCountries = () => {
     const [error, setError] = useState<null|string>(null);
     const fetchCountries = async () => {
         try {
-            const result = await axios.get(ENDPOINT);
+            //const result = await axios.get(ENDPOINT);
             // console.log("🚀 ~ file: useCountries.ts:19 ~ fetchCountries ~ result:", result)
-            setCountries(result.data as Country[]);
+            //setCountries(result.data as Country[]);
+
+            //Data when site or internet down
+            const testResult = countriesData;
+            setCountries(testResult as Country[]);
+
         } catch (error) {
             // console.log("🚀 ~ file: Home.tsx:14 ~ useEffect ~ error:", error)
             const errorMsg = (error as Error).message;
