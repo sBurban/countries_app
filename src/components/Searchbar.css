@@ -1,0 +1,19 @@
+
+
+.searchbar_container{
+    /*--icon-size: 50px;  <= Moving to Root css file */
+
+}
+.searchbar_container input{
+
+}
+.searchbar_container a{
+    display: inline-block;
+}
+.searchbar_container a img{
+    max-width: var(--icon-size);
+    max-height: var(--icon-size);
+    min-width: var(--icon-size);
+    min-height: var(--icon-size);
+    /*filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);*/
+}

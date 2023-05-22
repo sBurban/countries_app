@@ -1,5 +1,6 @@
 import { Country } from "../hooks/useCountries"
 import './footer.css'
+import arrowIcon from '../assets/arrow-alt-circle-up-solid.svg'
 
 const Footer = () => {
 
@@ -26,9 +27,13 @@ const Footer = () => {
                 </div>
 
                 <div className="arrow">
-                    <a href="#root"><i className="fas fa-arrow-alt-circle-up"></i></a>
+                    <a href="#root">
+                        <i className="fas fa-arrow-alt-circle-up"></i>
+                        <img src={arrowIcon} className="iconArrow" alt="Go to Root of page" />
+                    </a>
                 </div>
             </div>
+
         </footer>
     );
 }

@@ -22,7 +22,7 @@ const GraphWrapper = ({data, error}:CountriesResponse) => {
     }
 
     return (
-        <div className="graphwrapper">
+        <div id="stat_section" className="graphwrapper">
             <div className="graphwrapper__ui">
                 <button id="population" onClick={(e) => showPopulation(e)} >Population</button>
                 <button id="languages" onClick={(e) => showLanguages(e)} >Languages</button>
