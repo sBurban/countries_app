@@ -8,6 +8,7 @@ import GraphWrapper from "./Graph/GraphWrapper";
 import Footer from "./Footer";
 
 import { useState, useEffect } from "react";
+import { useDebouncedCallback } from 'use-debounce';
 
 //Lista de requerimientos:
 //1 header
@@ -28,42 +29,45 @@ const Home = () => {
     }, [countries.length])
 
 
-    const filterCountriesByText = (text:string) => {
-        if(text == "" || text == null || !text){
-            setFilteredCountries(countries);
-            return ;
-        }
-        const filteredList = countries.filter(rc => {
-            //name,city,languages
+    const filterCountriesByText = useDebouncedCallback(
+        // function
+        (text:string) => {
             console.log("Entered filter function");
-
-            const searchText = text.toLowerCase();
-            if(rc.name && rc.name.toLowerCase().indexOf(searchText) != -1) {
-                //console.log("Found by country name");
-                return true; //return rc;
+            if(text == "" || text == null || !text){
+                setFilteredCountries(countries);
+                return ;
             }
-            if(rc.capital && rc.capital.toLowerCase().indexOf(searchText) != -1){
-                //console.log("Found by country capital");
-                return true; //return rc;
-            }
-            if(rc.languages && rc.languages.length > 0){
-                const filterLanguages = rc.languages.filter(rcl => {
-                    if(rcl.name.toLowerCase().indexOf(searchText) != -1){
-                        return true;//return rcl;
-                    }
-                })
-                if(filterLanguages.length > 0) {
-                    //console.log("Found by country's languages");
-                    return rc;
+            const filteredList = countries.filter(rc => {
+                //name,city,languages
+                const searchText = text.toLowerCase();
+                if(rc.name && rc.name.toLowerCase().indexOf(searchText) != -1) {
+                    //console.log("Found by country name");
+                    return true; //return rc;
                 }
-            }
-
-            return false;
-        });
-        // console.log(filteredList.length);
-        //console.log(filteredList);
-        setFilteredCountries(filteredList);
-    }
+                if(rc.capital && rc.capital.toLowerCase().indexOf(searchText) != -1){
+                    //console.log("Found by country capital");
+                    return true; //return rc;
+                }
+                if(rc.languages && rc.languages.length > 0){
+                    const filterLanguages = rc.languages.filter(rcl => {
+                        if(rcl.name.toLowerCase().indexOf(searchText) != -1){
+                            return true;//return rcl;
+                        }
+                    })
+                    if(filterLanguages.length > 0) {
+                        //console.log("Found by country's languages");
+                        return rc;
+                    }
+                }
+                return false;
+            });
+            // console.log(filteredList.length);
+            //console.log(filteredList);
+            setFilteredCountries(filteredList);
+        },
+        // delay in ms
+        1000
+    );
 
     return <>
         <Header countriesCount={countries.length} />
