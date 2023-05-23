@@ -30,16 +30,14 @@ const useCountries = () => {
     const [error, setError] = useState<null|string>(null);
     const fetchCountries = async () => {
         try {
-            //const result = await axios.get(ENDPOINT);
-            // console.log("🚀 ~ file: useCountries.ts:19 ~ fetchCountries ~ result:", result)
-            //setCountries(result.data as Country[]);
+            const result = await axios.get(ENDPOINT);
+            setCountries(result.data as Country[]);
 
             //Data when site or internet down
-            const testResult = countriesData;
-            setCountries(testResult as Country[]);
+            // const testResult = countriesData;
+            // setCountries(testResult as Country[]);
 
         } catch (error) {
-            // console.log("🚀 ~ file: Home.tsx:14 ~ useEffect ~ error:", error)
             const errorMsg = (error as Error).message;
             setError(errorMsg);
             setCountries([]);

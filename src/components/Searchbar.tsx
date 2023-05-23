@@ -4,8 +4,6 @@ import './Searchbar.css'
 
 type SearchbarProps = {
     changeFunction: (text:string) => void,
-    // changeFunction: (event:React.ChangeEvent<HTMLInputElement>) => void,
-    // currentText: string,
 }
 
 const Searchbar = ({changeFunction}:SearchbarProps) => {
@@ -15,15 +13,12 @@ const Searchbar = ({changeFunction}:SearchbarProps) => {
     const onTextChange = ({target, currentTarget}: React.ChangeEvent<HTMLInputElement>) => {
         const text = currentTarget.value;
         setSearchText(text);
-        //filterCountriesByText(text);
         changeFunction(text);
     };
 
     return (
         <div className="searchbar_container">
             <input type="text" id="searchbar" placeholder="Search countries by name, city and languages"
-                // onChange={changeFunction}
-                // value={currentText}
                 onChange={onTextChange}
                 value={searchText}
             />

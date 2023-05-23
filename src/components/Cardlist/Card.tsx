@@ -7,7 +7,6 @@ interface CardProps{
 }
 
 const Card = ({info}:CardProps) => {
-// const Card = ({name, capital, languages, population, currency, flags}:CardProps["info"]) => {
     const languages = info.languages?.length > 0? info.languages.map(r => r.name).join(", ") : "";
     const currencies = info.currencies?.length > 0? info.currencies.map(r => r.code).join(", ") : "";
 

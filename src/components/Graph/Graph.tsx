@@ -1,4 +1,3 @@
-// import { CountriesResponse } from "../../common/Types";
 import { Country } from "../../hooks/useCountries";
 import './Graph.modules.css'
 
@@ -6,8 +5,6 @@ interface GraphProps {
     displayGraph: string,
     countries:Country[],
     error: null|string
-    // data: keyof CountriesResponse,
-    // error: keyof CountriesResponse
 }
 
 type ReducerResult = Record<string, number>;
@@ -33,9 +30,7 @@ const Graph = ({displayGraph, countries, error}:GraphProps) => {
 
 
 const PopulationGraph = ({countries}:GraphP) => {
-    // let worldPopulation = 0;
     const mostPopulated = [...countries].sort((a,b) => {
-        // worldPopulation += b.population;
         return b.population-a.population;
     }).slice(0,10);
 
@@ -45,8 +40,6 @@ const PopulationGraph = ({countries}:GraphP) => {
         },
         0
     );
-    // console.log("🚀 ~ file: Graph.tsx:22 ~ Graph ~ mostPopulated:", mostPopulated)
-    // console.log("🚀 ~ file: Graph.tsx:22 ~ Graph ~ worldPopulation:", worldPopulation)
 
     return (
         <div className="bars__wrapper">
@@ -85,10 +78,9 @@ const LanguagesGraph = ({countries}:GraphP) => {
         },
         initialValue
     );
-    // console.log("🚀 ~ file: Graph.tsx:39 ~ Graph ~ languagesCounterObj:", languagesCounterObj)
+
     //Returns array of Language/Number
     const languages = Object.entries(languagesCounterObj).sort((a,b) => b[1]-a[1]).slice(0,10);
-    // console.log("🚀 ~ file: Graph.tsx:42 ~ Graph ~ languagesArray:", languagesArray)
 
     return (
     <div className="bars__wrapper">

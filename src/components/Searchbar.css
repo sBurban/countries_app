@@ -1,10 +1,8 @@
 
 
 .searchbar_container{
-    /*--icon-size: 50px;  <= Moving to Root css file */
     padding: 1rem;
     margin: 0.2rem;
-
 }
 #searchbar{
     background-color: #faf6f6;
@@ -35,5 +33,4 @@
     max-height: var(--icon-size);
     min-width: var(--icon-size);
     min-height: var(--icon-size);
-    /*filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);*/
 }

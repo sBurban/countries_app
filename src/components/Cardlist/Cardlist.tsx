@@ -1,13 +1,8 @@
-// import { Country } from "../../hooks/useCountries";
 import Card from "./Card";
 import './Card.modules.css';
 
 import { CountriesResponse } from "../../common/Types";
 
-// interface CardlistProps {
-//     data:Country[],
-//     error: null|string
-// }
 
 const Cardlist = ({data, error}:CountriesResponse) => {
 
@@ -20,9 +15,6 @@ const Cardlist = ({data, error}:CountriesResponse) => {
         cardsAr.push(<Card key={i} info={elem}  />);
     });
 
-    // return <div className="cardlist_container">
-    //     {cardsAr.length}
-    // </div>;
     return <>
         {!data?.length && <div>Loading...</div>}
         {data?.length > 0 &&

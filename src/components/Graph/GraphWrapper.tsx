@@ -1,13 +1,9 @@
-// import { Country } from "../../hooks/useCountries"
 import { useState } from "react"
 import Graph from './Graph';
 import { CountriesResponse } from "../../common/Types";
 import './Graph.modules.css'
 
-// interface GraphProps {
-//     data:Country[],
-//     error: null|string
-// }
+import { NewButton } from "../Button";
 
 const GraphWrapper = ({data, error}:CountriesResponse) => {
     const [display, setDisplay] = useState("population");
@@ -24,8 +20,8 @@ const GraphWrapper = ({data, error}:CountriesResponse) => {
     return (
         <div id="stat_section" className="graphwrapper">
             <div className="graphwrapper__ui">
-                <button id="population" onClick={(e) => showPopulation(e)} >Population</button>
-                <button id="languages" onClick={(e) => showLanguages(e)} >Languages</button>
+                <NewButton id="population" onClick={showPopulation} text="Population" />
+                <NewButton id="languages" onClick={showLanguages} text="Languages" />
             </div>
             <h4>10 Most Populated Countries in the World</h4>
             <div className="graphwrapper__graphs">
