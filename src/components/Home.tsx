@@ -22,37 +22,13 @@ import { useState, useEffect } from "react";
 const Home = () => {
     const {countries, error} = useCountries();
     const [filteredCountries, setFilteredCountries] = useState(countries);
-    // if(error){
-        //     return <div>{error}</div>;
-        // }
-        // const [searchText, setSearchText] = useState("");
-        // const handleTextChange = (text:string) => {
-            //     console.log("changed text");
-            //     // setSearchText(text);
-            //     filterCountriesByText(text);
-    // };
-    // const onTextChange = ({target, currentTarget}: React.ChangeEvent<HTMLInputElement>) => {
-        //     console.log("changed text");
-        //     const text = currentTarget.value;
-        //     setSearchText(text);
-        //     //filterCountriesByText(text);
-        // };
-        useEffect(() => {
-            // console.log("Loaded countries: ");
-            // console.log("🚀 ~ file: Home.tsx:48 ~ Home ~ countries:", countries.length)
-            // console.log("🚀 ~ file: Home.tsx:25 ~ Home ~ filteredCountries:", filteredCountries.length)
-            setFilteredCountries(countries);
-    //   return () => {
-    //     second
-    //   }
+
+    useEffect(() => {
+        setFilteredCountries(countries);
     }, [countries.length])
 
 
-
-
     const filterCountriesByText = (text:string) => {
-        // console.log("🚀 ~ file: Home.tsx:54 ~ filterCountriesByText ~ text:", text)
-
         if(text == "" || text == null || !text){
             setFilteredCountries(countries);
             return ;
@@ -87,26 +63,14 @@ const Home = () => {
         // console.log(filteredList.length);
         //console.log(filteredList);
         setFilteredCountries(filteredList);
-
     }
 
     return <>
         <Header countriesCount={countries.length} />
         <Searchbar changeFunction={filterCountriesByText} />
-        {/* <Searchbar currentText={searchText} changeFunction={onTextChange} /> */}
-        <Cardlist data={countries} error={error} />
-        {/* <Cardlist data={filteredCountries} error={error} /> */}
+        <Cardlist data={filteredCountries} error={error} />
         <GraphWrapper data={countries} error={error} />
         <Footer />
-        {/* {!countries?.length && <div>Loading...</div>}
-        {countries?.length > 0 &&
-            <Cardlist data={countries} error={error} />
-        } */}
-        {/* {countries?.length > 0 &&
-            <div>
-                {countries.map((r,i) => <p key={i}>{r.name}</p>)}
-            </div>
-        } */}
     </>;
 };
 

@@ -34,7 +34,7 @@ const Graph = ({displayGraph, countries, error}:GraphProps) => {
 
 const PopulationGraph = ({countries}:GraphP) => {
     // let worldPopulation = 0;
-    const mostPopulated = countries.sort((a,b) => {
+    const mostPopulated = [...countries].sort((a,b) => {
         // worldPopulation += b.population;
         return b.population-a.population;
     }).slice(0,10);
