@@ -16,6 +16,7 @@
     text-indent: 2rem;
     padding: 15px 20px;
     margin: 2rem;
+    color: orange;
 }
 #searchbar::placeholder{
     color: rgb(183, 170, 170);
