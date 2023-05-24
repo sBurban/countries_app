@@ -1,0 +1,36 @@
+
+
+.searchbar_container{
+    padding: 1rem;
+    margin: 0.2rem;
+}
+#searchbar{
+    background-color: #faf6f6;
+    border-radius: 3rem;
+    border: 0.2rem solid #f8e7e7;
+    height: 3rem;
+    width: 40%;
+    font-size: 1.6rem;
+    text-indent: 2rem;
+    padding: 15px 20px;
+    margin: 2rem;
+    color: orange;
+}
+#searchbar::placeholder{
+    color: rgb(183, 170, 170);
+}
+#searchbar:focus, #searchbar:hover {
+    box-shadow: 0 0 0.1rem 0.1rem #ece6e6;
+    background: #faf6f6;
+}
+
+
+.searchbar_container a{
+    display: inline-block;
+}
+.searchbar_container a img{
+    max-width: var(--icon-size);
+    max-height: var(--icon-size);
+    min-width: var(--icon-size);
+    min-height: var(--icon-size);
+}

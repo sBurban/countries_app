@@ -3,15 +3,26 @@ import axios from "axios";
 
 // const DATABASE = 'https://restcountries.eu/rest/v2/all';
 const ENDPOINT = 'https://restcountries.com/v2/all';
+import { countriesData } from '../data/countries.js'; //Data when site or internet down
+
+type Language = {
+    name: string
+}
+
+type Currency = {
+    code: string
+}
 
 export type Country = {
     name: string,
+    alpha3Code: string,
     capital: string,
-    languages: {
-        name: string
-    },
+    languages: Language[],
     population: number,
-    currency: string
+    currencies: Currency[],
+    flags: {
+        svg: string
+    }
 }
 
 const useCountries = () => {
@@ -20,10 +31,13 @@ const useCountries = () => {
     const fetchCountries = async () => {
         try {
             const result = await axios.get(ENDPOINT);
-            // console.log("🚀 ~ file: useCountries.ts:19 ~ fetchCountries ~ result:", result)
             setCountries(result.data as Country[]);
+
+            //Data when site or internet down
+            // const testResult = countriesData;
+            // setCountries(testResult as Country[]);
+
         } catch (error) {
-            // console.log("🚀 ~ file: Home.tsx:14 ~ useEffect ~ error:", error)
             const errorMsg = (error as Error).message;
             setError(errorMsg);
             setCountries([]);
