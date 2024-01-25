@@ -3,7 +3,7 @@ import axios from "axios";
 
 // const DATABASE = 'https://restcountries.eu/rest/v2/all';
 const ENDPOINT = 'https://restcountries.com/v2/all';
-import { countriesData } from '../data/countries.js'; //Data when site or internet down
+// import { countriesData } from '../data/countries.js'; //Data when site or internet down
 
 type Language = {
     name: string
@@ -27,7 +27,7 @@ export type Country = {
 
 const useCountries = () => {
     const [countries, setCountries] = useState<Country[]>([]);
-    const [error, setError] = useState<null|string>(null);
+    const [error, setError] = useState<null | string>(null);
     const fetchCountries = async () => {
         try {
             const result = await axios.get(ENDPOINT);
